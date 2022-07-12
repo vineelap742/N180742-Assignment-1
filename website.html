@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RGUKT website</title>
+	<link rel="icon" type="img/icon type" href="pv.png">
+	<link rel="stylesheet" type="text/css" href="website.css">
+	<script type="text/javascript" src="website.js"> 
+  </script>
+  <style type="text/css">
+     body{
+      background-image: url('bg.jpg');
+     }
+  </style>
+</head>
+<body>
+  <form action="/vp.php" method="post" onsubmit="return validate();">
+   <header id="main-header">
+   	<img src="vine.jpg" style="height: 80px; width: 70px;" id="i" onmouseover="change()" onmouseout="unchange()">
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn"><img src="menu.png" class="menu"></button>
+        <div id="myDropdown" class="dropdown-content">
+           <a href="#home"><img src="home.png" style="height: 15px; width:15px;">HOME</a>
+           <a href="#about"><img src="exam.png" style="height: 15px; width:15px;">EXAM</a>
+           <a href="#contact"><img src="branch.png" style="height: 15px; width:15px;">BRANCH</a>
+           <a href="#contact"><img src="contact.png" style="height: 15px; width:15px;">CONTACT</a>
+        </div>
+    </div>
+   	<div id="div1">
+       <h1 class="m">Rajiv Gandhi University of Knowledge and Technologies</h1>
+       <!-- <h3 class="m1">created by vineela</h3> -->
+   </div>
+    </header>
+    <nav class="top-navigation">
+      <div class="nav-links">
+        <ul>
+            <li class="home"><a href="file:///C:/Users/Vineela/Desktop/www/website.html#top" target="blank"><img src="home.png" style="height: 25px; width:25px;">HOME</a></li>
+            <li>
+              <div class="dropdown3">
+                  <a class="dropbtn3"><img src="exam.png" style="height: 25px; width:25px;">EXAM REGISTRATION</a>
+                    <div id="myDropdown3" class="dropdown-content3">
+                       <input type="button" onclick="document.location='login page.html'" value="LOGIN">
+                       <input type="button" onclick="document.location='form validation.html'" value="Register"> 
+                   </div>
+              </div>
+            </li>
+             <li>
+              <div class="dropdown2">
+                  <a class="dropbtn2"><img src="branch.png" style="height: 25px; width:25px;">BRANCH</a>
+                    <div id="myDropdown2" class="dropdown-content2">
+                      <div class="dropdown21">
+                       <a href="#home" class="dropbtn21">CSE</a>
+                           <div id="myDropdown21" class="dropdown-content21">
+                              <a>Faculty</a>
+                              <a>Students</a>
+                            </div>
+                        <a href="#home" class="dropbtn21">ECE</a>
+                        <a href="#home" class="dropbtn21">CIVIL</a>
+                      </div>
+                   </div>
+              </div>
+            </li>
+            <!-- <li><a href="" target="blank"><img src="contact.png" style="height: 25px; width:25px;">CONTACT</a></li> -->
+            <li>
+             <div class="dropdown1">
+              <a class="dropbtn1"><img src="contact.png" style="height: 25px; width:25px;">CONTACT</a>
+                  <div class="dropdown-content1">
+                    <a href="#">n180742@rguktn.ac.in</a>
+                    <a href="#">7032515624</a>
+                    <a href="#">map</a>
+                  </div>
+              </div> 
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <br>
+    </form>
+   <div id="new">
+    <div class="rightdiv">
+      <table class="list">
+          <h3 class="shadow2" style="color:white;text-align:center;">NOTIFICATIONS</h3>
+         <tr><td><marque behaviour="scroll" direction="up">counselling services-reg</marque></td></tr>
+         <tr><td><marque behaviour="scroll" direction="up">Registration for free Ayurvedic and Homeo medical camp by department of AYUSH, A.P.</marque></td></tr>
+          <tr><td><marque behaviour="scroll" direction="up">Instruction to PH students who are taking pension at Nuzvid</marque></td></tr>
+          <tr><td><marque behaviour="scroll" direction="up">Don't stick Birth day and any other celebration posters any where in the campus</marque></td></tr>
+          <tr><td><marque behaviour="scroll" direction="up">Uploading of Jagananna Vidya Deevena and Vasathi Deevena details date extension regarding</marque></td></tr>
+        </table>
+             </div>
+     <div class="leftdiv">
+        <table class="list">
+          <tr><td><h3 class="shadow">About RGUKT</h3></td></tr>
+          <tr><td>RGUKT Nuzvid is the only institute which provides students with laptop and internet connectivity</td></tr>
+          <tr><td>The institute has a population of 6000 students and 300 faculty members. </td></tr>
+           <tr><td> The institute also has the biggest library in Andhra Pradesh</td></tr>
+          <tr><td> Placements:- RGUKT Nuzvid has a solid placement department for BTech and MTech students. </td></tr>
+          <tr><td>The university is offering 6 years integrated B.Tech program in six major branches.</td></tr>
+          </table>
+     </div>
+   <div class="slideshow-container">
+       <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="R1.jpg" style="width:100%">
+        <div class="text">House</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="R2.jpg" style="width:100%">
+        <div class="text">Nature</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="R3.jpg" style="width:100%">
+        <div class="text">Rocks</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+   </div>
+   <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  </div>
+ </div>
+           <div class="nested-position">
+      <a href="#top"><img title="Move to top of the page" class="scroll-image" src="Arrow.ico" height="70px" width="70px"></a>
+    </div>
+    <footer id="main-footer">
+     <p><small>copy right &copy;2022 #vineela</small></p>  
+     <div class="foot">
+      View Count:<img src="https://hitwebcounter.com/counter/counter.php?page=8012338&style=0009&nbdigits=6&type=page&initCount=6" title="Free Counter" Alt="web counter" border="0"/></a>      
+ </footer>
+ <script type="text/javascript">
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) 
+    {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n)
+    {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n)
+    {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+ </script>
+</body>
+</body>
+</html>

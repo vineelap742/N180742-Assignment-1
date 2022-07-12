@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>login page</title>
+    <style type="text/css">
+      .small{
+        margin-left: 500px;
+        margin-right: 500px;
+      }
+      .user,.pass 
+      {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+     }
+      button
+    {
+        background-color:#008080;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+     }
+     button:hover
+      {
+         opacity: 0.8;
+     }
+
+     .cancel
+     {
+          width: auto;
+          padding: 10px 18px;
+          background-color:#008080;
+     }
+
+     .form
+      {
+          text-align: center;
+          margin: 24px 0 12px 0;
+     }
+
+      .logi
+      {
+          width: 40%;
+          border-radius: 50%;
+     }
+
+    .form2
+     {
+          padding: 16px;
+     }
+
+     .psw
+      {
+          float: right;
+          padding-top: 16px;
+    }
+    .form4
+    {
+        padding: 16px;
+    }
+  /*  @media screen and (max-width: 300px)
+    {
+        .psw{
+            display: block;
+            float: none;
+        }
+        .cancel{
+            width: 100%;
+        }
+    }
+       */ 
+        ul li
+        {
+            width: 200px;
+            background-color: grey;
+            list-style: none;
+            margin-bottom: 3px;
+        }
+        button
+        {
+            margin-left: 5px;
+        }
+        .delete
+        {
+            background-color: blue;
+        }
+        button:hover
+        {
+            background-color: darkred;
+        }
+
+        </style>
+    </head>
+ <body>
+    <center>
+        <div class="small">
+         <h2>LOGIN</h2>
+         <form action="pv.php" method="post">
+            <div class="form">
+                <img src="logi.png" class="logi" width="10px" height="120px">
+            </div>
+            <div class="form2">
+                <label for="uname"><b>Username</b></label><input type="text" placeholder="Enter Username" class="user" required>
+                <label for="psw"><b>Password</b></label><input type="password" placeholder="Enter Password" class="pass" required>
+                 <button type="submit" class="submit">Login</button>
+                <label><input type="checkbox" checked="checked"> Remember me </label>
+            </div>
+             <div class="form3">
+                 <button type="button" class="cancel">Cancel</button>
+                 <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+       </div>
+      </center>
+
+ </body>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validation</title>
+	<style type="text/css">
+			div{
+			background-color:#C0C0C0;
+			width: 800px;
+			}
+	</style>
+	<script type="text/javascript" src="validation.js">
+	function valid(){
+	var fn=document.getElementById("firstname").value;
+	var mn=document.getElementById("middlename").value;
+	var ln=document.getElementById("lastname").value;
+	var p=/^[a-z,A-{Z]{3,}$/;
+
+	  		if(mn!="")
+		{
+			if(p.test(fn)&&p.test(ln)&&p.test(mn))
+			{   
+				return true;
+			}
+			else
+			{
+				document.getElementById("firstname").style.border="2px solid red";   	    
+				document.getElementById("f").style.visibility="visible";
+				document.getElementById("lastname").style.border="2px solid red";
+				document.getElementById("l").style.visibility="visible";
+				document.getElementById("middlename").style.border="2px solid red";
+				document.getElementById("m").style.visibility="visible";
+				return false;
+			} 
+		}
+		else if(mn=="")
+		{
+			if(p.test(fn)&&p.test(ln))
+			{
+	            return true;
+			}
+		}
+		else
+		{   document.getElementById("firstname").style.border="2px solid red";   	    
+			document.getElementById("f").style.visibility="visible";
+			document.getElementById("lastname").style.border="2px solid red";
+			document.getElementById("l").style.visibility="visible";
+			return false;
+		} 
+	}
+function validEmail()
+{  
+    var em=document.getElementById("email").value;
+    var pt=/^[a-z,A-Z,0-9][a-z,A-Z,0-9,_,.]*@[a-z]{3,6}\.[a-z]{2,3}(\.[a-z]{2,3})*$/
+	if(pt.test(em))
+	{
+		return true;
+	}
+	else
+	{   
+		return false;
+	}
+}
+function Birthday()
+{
+	var minutes = 1000 * 60;
+	var hours = minutes * 60;
+	var days = hours * 24;
+	var years = days * 365;
+	var birthday = Date.parse(document.getElementById("myBirthday").value);
+	var dateNow = new Date();
+	var YearsOld = Math.round((dateNow-birthday)/ years);
+	document.getElementById("displayBirthday").innerHTML = ("You are " + YearsOld + " years old.");
+}
+function sp()
+{
+	var cb=document.getElementById("s").checked;
+	if(cb)
+	{
+		document.getElementById("password").type="text";
+	}
+	else
+	{
+		document.getElementById("password").type="password";
+	}
+  
+}
+function phone()
+{
+	var num=document.getElementById("phno").value;
+	var country=document.getElementById("ctry").value;
+	var c1=/^\d{10}$/;
+	var c2=/^\d{3}\-\d{4}\-\d{3}$/;
+	if(country=="India")
+	{
+		if(c1.test(num))
+		{
+			return true;
+		}
+		else
+		{	document.getElementById("phno").style.border="2px solid red";   	    
+			document.getElementById("n").style.visibility="visible";
+			return false;
+		}
+	}
+	else if(country=="USA")
+	{
+		if(c2.test(num))
+		{
+			return true;
+		}
+		else
+		{	document.getElementById("phno").style.border="2px solid red";   	    
+			document.getElementById("n").style.visibility="visible";
+			return false;
+		}
+	}
+}
+function Filevalidation()  
+  {
+    var fi = document.getElementById("file");
+    if (fi.files.length > 0) 
+    {
+      for (var i = 0; i <= fi.files.length - 1; i++) 
+      {
+        var fsize = fi.files.item(i).size;
+        var file = Math.round((fsize / 50));
+        if (file >50) 
+        {
+          alert("File too Big, please select a file less than 50kb");
+        }
+        else 
+        {
+          document.getElementById('size').innerHTML = '<b>' + file + '</b> KB';
+        }
+      }
+    }
+  }
+function resetform()
+{
+	document.getElementById("form").reset();
+}
+var myform=document.getElementById("myform");
+myform.addEventListener('submit',addItem,false);
+var lists=document.getElementById("lists");
+lists.addEventListener('click',removeItem,false);
+function addItem(e)
+ {  
+ 	e.preventDefault();
+ 	var f=document.getElementById("first").value;
+    var l=document.createElement("li");
+    var text=document.createTextNode(f);
+    l.appendChild(text);
+    var dbtn=document.createElement("button");
+    dbtn.setAttribute("class","delete")
+    var dtext=document.createTextNode("X");
+    dbtn.appendChild(dtext);
+    l.appendChild(dbtn);
+    lists.appendChild(l)
+	console.log(lists);
+}
+function removeItem(e)
+{
+	if(e.target.classList.contains('delete'))
+   {
+      //console.log("delete called");
+      if(confirm("Are you sure you want yo delete"))
+      {
+         var li=e.target.parentElement;
+         lists.removeChild(li);
+      }
+   }
+}
+function validate()
+	{
+	 var fn1=valid();
+	 var fn2=validEmail();
+	 var fn3=Birthday();
+	 var fn4=sp();
+	 var fn5=phone();
+	 var fn6=Filevalidation();
+	 var fn7=resetform();
+	 var fn8=addItem(e);
+	 var fn9=removeItem(e);
+     if(fn1&&fn2&&fn3&&fn4&&fn5&&fn6&&fn7&&fn8&&fn9){
+     	return true;
+     }
+     else{
+     	return false;
+     }
+    }
+	</script>
+</head>
+	<center>
+		<div>
+			<form action="/pv.php" method="post" onsubmit="return validate()" id="form">
+					<table>
+			   			<p><b>REGISTRATION FORM</b></p>
+						<tr><td>First Name:</td><td><input type="text" id="firstname" required><label id="f" style="color:red;visibility:hidden;">Invalid Data!!!</label></td></tr>
+						<tr><td>Middle Name:</td><td><input type="text" id="middlename"><label id="m" style="color:red;visibility:hidden;">Invalid Data!!!</label></td></tr>
+						<tr><td>Last Name:</td><td><input type="text"  id="lastname" required><label id="l" style="color:red;visibility:hidden;">Invalid Data!!!</label></td></tr>
+						<tr><td>Email:</td><td><input type="text" id="email" required><label id="e" style="color:red;visibility:hidden;">Invalid mail!!!</label></td></tr>
+						<tr><td>PassWord:</td><td><input type="password" id="password" required><label id="pw" style="color:red;visibility:hidden;">Invalid Data!!!</label></td></tr>
+						<tr><td>Show Password:</td><td><input type="checkbox" id="s" onclick="sp();"></td></tr>
+						<tr><td>Counrty:</td><td><select id="ctry"><option>India</option> <option>USA</option></select></td></tr>
+	          <tr><td>Phone Number:</td><td><input type="text" id="phno" onclick="fn5"><label id="n" style="color:red;visibility:hidden;">Invalid Data!!!</label></td></tr>
+		                <tr><td>DOB:</td><td><input type="date" id="myBirthday" value="dd-mm-yyyy"><input type="checkbox" onclick="Birthday();"></td></tr>
+						<tr><td><td id="displayBirthday"></td></td></tr>
+						<tr><td>Upload your photo:</td><td><input type="file"></td></tr>
+						 <p id="size"></p>
+       			 	 	<tr><td>Branch:</td><td>MEC<input type="checkbox" id="c1">CSE<input type="checkbox" id="c2">ECE<input type="checkbox" id="c3"></td></tr>
+						<tr><td><input type="button" onclick="resetform()" value="Reset form"></td>
+						<td><input type="submit"  name="s" value="Register"></td></tr>
+						<div class="hobby">
+							<form id="myform">
+							<tr><td>Hobbies:</td><td><input type="text" id="first"><input type="submit" value="ADD"></td></tr><br>
+							<tr><td>Hobbies are:</td><td><ul id="lists">
+								                           <li>watching movies<button class="delete">x</button></li>
+								                           </ul></td></tr>
+							</form>
+						</div>
+
+					</table>
+				</form>
+			</div>
+		</center>
+		<center>
+		<input type="checkbox" id="ch">I have read and accepted the terms and conditions.
+										<p class="proceed">(Click Check Box to proceed registration.) </p>
+										<p id="errorproceed_english"></p>
+										</center>
+</body>
+</html>
